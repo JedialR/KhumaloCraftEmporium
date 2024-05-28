@@ -1,0 +1,40 @@
+﻿@model IEnumerable<KhumaloCraftEmporium.Models.Product>
+
+@{
+    ViewData["Title"] = "My Work";
+}
+
+<h2>My Work</h2>
+
+<div class="container py-5">
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 shadow">
+                    <img src="~/images/product-placeholder.jpg" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">Price: $@product.Price</p>
+                        <p class="card-text">Category: @product.Category</p>
+                        <p class="card-text">Availability: @product.Availability</p>
+                        <form asp-controller="ShoppingCart" asp-action="AddToCart" method="post">
+                            <input type="hidden" name="id" value="@product.Id" />
+                            <button type="submit" class="btn btn-primary btn-block">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+</style>

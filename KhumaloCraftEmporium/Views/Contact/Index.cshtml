@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="text-center mb-5">
+                <h1>Contact Us</h1>
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @ViewBag.Message
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="my-5">
+                <h3>Our Contact Information</h3>
+                <ul class="list-unstyled">
+                    <li><strong>Address:</strong> 123 Main Street, City, Country</li>
+                    <li><strong>Phone:</strong> 1234567890</li>
+                    <li><strong>Email:</strong> info@khumalocraft.co.xa</li>
+                </ul>
+            </div>
+
+            <div class="my-5">
+                <h3>Social Media</h3>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/youraccount" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <!-- Add more social media links as needed -->
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="bg-light p-4">
+                <h3>Contact Form</h3>
+                <form method="post" action="/Contact/Submit">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone number</label>
+                        <input type="text" class="form-control" id="phone" name="Phone" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <h3>FAQs</h3>
+            <div>
+                <h5>What payment methods do you accept?</h5>
+                <p>We accept all major credit and debit cards.</p>
+            </div>
+            <div>
+                <h5>How can I track my order?</h5>
+                <p>Once your order ships, you will receive a tracking number via email.</p>
+            </div>
+            <!-- Add more FAQs as needed -->
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <h3>Location</h3>
+            <div class="embed-responsive embed-responsive-16by9 mb-4">
+                <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1744.6470201925348!2dYourLongitude!3dYourLatitude!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zYOUR_LATITUDE!5e0!3m2!1sen!2sus!4v1622178005625!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .embed-responsive-16by9 {
+        height: 300px; /* Adjust the height as needed */
+    }
+</style>
